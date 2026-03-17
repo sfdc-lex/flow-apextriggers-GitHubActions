@@ -14,7 +14,12 @@ jobs:
         run: |
           #Insatlling Node.js to install Salesforce CLI
           npm install @salesforce/cli --global
+          #Verifying Salesforce CLI version
           sf --version
+      - name : Decrypting the JWT encrypted key for Authentication
+        run: |
+          #Decrypting the JWT encrypted key using OpenSSL
+          openssl enc -aes-256-cbc -d in ${{secrets.JWT_ENCRYPTION_KEY_FILE}} -out ${{secrets.JWT_KEY_FILE}} -K ${{secrets.ENCRYPTION_KEY}} -iv ${{secrets.ENCRYPTION_IV}} -base64
       
 
 
