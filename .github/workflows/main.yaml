@@ -10,9 +10,18 @@ jobs:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v5
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner.
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Print information about the runner
+        run: |
+          echo "🏷️ Runner name: $RUNNER_NAME"
+          echo "💻 Runner OS: $RUNNER_OS"
+          echo "⚡ Runner architecture: $RUNNER_ARCH"
+      - name: print Github context
+        run: |
+         echo "📋 GitHub context: ${{ toJson(github) }}"
+    
       - run: echo "🍏 This job's status is ${{ job.status }}."
