@@ -28,5 +28,4 @@ jobs:
         run: |
           #Validating the Salesforce organization by displaying the authenticated user
           sf project deploy start --target-org ${{vars.SF_ALIAS}} --source-dir force-app --dry-run --wait 10
-          #Displaying the authenticated Salesforce organization details
-          sf org display --list --verbose
+         
