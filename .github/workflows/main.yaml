@@ -6,36 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🏗️ Building the application..."
-  Test:
-    needs: Build
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "✅ Running tests..."
-  Deploy:
-    needs: Test
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "🚀 Deploying the application..."   
-  Explore-GitHub-Actions:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out repository code
-        uses: actions/checkout@v5
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - name: Print information about the runner
-        run: |
-          echo "🏷️ Runner name: $RUNNER_NAME"
-          echo "💻 Runner OS: $RUNNER_OS"
-          echo "⚡ Runner architecture: $RUNNER_ARCH"
-      - name: Print Github context
-        run: |
-         echo "📋 GitHub context: ${{ toJson(github) }}"
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+        with:
+          fetch-depth: 0
+          
+
     
-      - run: echo "🍏 This job's status is ${{ job.status }}."
