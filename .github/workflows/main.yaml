@@ -23,4 +23,4 @@ jobs:
       - name: Authenticating to Salesforce using JWT
         run: |
           #Authenticating to Salesforce using the decrypted JWT key
-          sf org login jwt --client-id ${{secrets.SF_CLIENT_ID}} --jwt-key-file ${{secrets.JWT_KEY_FILE}} --username ${{secrets.SF_USERNAME}} --install-url ${{vars.SF_INSTANCE_URL}} --alis ${{vars.SF_ALIAS}} --set-default
+          sf org login jwt --client-id ${{secrets.SF_CLIENT_ID}} --jwt-key-file ${{secrets.JWT_KEY_FILE}} --username ${{secrets.SF_USERNAME}} --instance-url ${{vars.SF_INSTANCE_URL}} --alias ${{vars.SF_ALIAS}} --set-default
