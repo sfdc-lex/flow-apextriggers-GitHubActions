@@ -2,6 +2,18 @@ name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🏗️ Building the application..."
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "✅ Running tests..."  
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🚀 Deploying the application..."   
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
