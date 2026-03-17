@@ -31,5 +31,5 @@ jobs:
       - name: Deploying to Salesforce organization
         run: |
           #Deploying to Salesforce organization
-          sf project deploy start --target-org ${{vars.SF_ALIAS}} --manifest manifest/package.xml --wait 10
+          sf project deploy start --target-org ${{vars.SF_ALIAS}} --source-dir force-app --wait 10
          
