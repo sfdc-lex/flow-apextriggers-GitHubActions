@@ -7,10 +7,12 @@ jobs:
     steps:
       - run: echo "🏗️ Building the application..."
   Test:
+    needs: Build
     runs-on: ubuntu-latest
     steps:
-          - run: echo "✅ Running tests... 
+      - run: echo "✅ Running tests... 
   Deploy:
+    needs: Test
     runs-on: ubuntu-latest
     steps:
       - run: echo "🚀 Deploying the application..."   
