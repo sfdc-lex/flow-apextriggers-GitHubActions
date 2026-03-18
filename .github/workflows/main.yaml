@@ -23,7 +23,7 @@ on:
 jobs:
   Build:
     runs-on: ubuntu-latest
-    environment: dev
+    environment: uat
     steps:
       - run: echo "🏗️ Building the application..."
       - name: Checkout
