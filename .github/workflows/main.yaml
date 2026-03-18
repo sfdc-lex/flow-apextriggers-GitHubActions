@@ -39,7 +39,7 @@ jobs:
       - name : Decrypting the JWT encrypted key for Authentication
         run: |
           #Decrypting the JWT encrypted key using OpenSSL.
-          openssl enc -aes-256-cbc -d -in ${{secrets.JWT_ENCRYPTION_KEY_FILE}} -out ${{secrets.JWT_KEY_FILE}} -K ${{secrets.ENCRYTION_KEY}} -iv ${{secrets.ENCRYPTION_IV}} -base64
+          openssl enc -aes-256-cbc -d -in ${{secrets.JWT_ENCRYPTION_KEY_FILE}} -out ${{secrets.JWT_KEY_FILE}} -K ${{secrets.ENCRYTION_KEY}} -iv 27D4CE831FCBCAD699476CFFFBD141CA -base64
       - name: Authenticating to Salesforce using JWT
         run:
           #Authenticating to Salesforce using the decrypted JWT key
