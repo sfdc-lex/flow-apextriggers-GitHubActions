@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: prod
     steps:
-      - run: echo "🏗️ Building the application..."
+      - run: echo "🏗️ Building the application...."
       - name: Checkout
         uses: actions/checkout@v6.0.2
         with:
