@@ -20,6 +20,9 @@ on:
       - synchronize
       - reopened
       - closed
+
+env:
+  ENCRYPTION_KEY: 83477058723047234087
 jobs:
   Build:
     runs-on: ubuntu-latest
