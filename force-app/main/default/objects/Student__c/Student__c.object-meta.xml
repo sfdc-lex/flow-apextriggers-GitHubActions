@@ -156,7 +156,8 @@
     <label>Student</label>
     <nameField>
         <label>Student Name</label>
-        <trackHistory>true</trackHistory>
+        <!-- <trackHistory>true</trackHistory> -->
+         <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>
     <pluralLabel>Students</pluralLabel>
