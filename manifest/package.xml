@@ -116,10 +116,13 @@
 		<members>*</members>
 		<name>Flow</name>
 	</types>
-	<types>
+	<! -- 
+	<types> 
 		<members>*</members>
 		<name>GlobalValueSet</name>
-	</types>
+	</types> 
+	-->
+
 	<types>
 		<members>Attendee__c-Attendee Layout</members>
 		<members>Booking__c-Booking Layout</members>

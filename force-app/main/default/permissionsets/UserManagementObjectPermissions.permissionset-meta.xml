@@ -239,11 +239,11 @@
         <field>Order.Opportunity__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <fieldPermissions>
+   <!--  <fieldPermissions>
         <editable>true</editable>
         <field>Order.Quote__c</field>
         <readable>true</readable>
-    </fieldPermissions>
+    </fieldPermissions> -->
     <fieldPermissions>
         <editable>true</editable>
         <field>Session__c.DetailedDescription__c</field>
