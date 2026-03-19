@@ -36,6 +36,13 @@ jobs:
           npm install @salesforce/cli --global
           #Verifying Salesforce CLI version
           sf --version
+      - name: Insatll Salesforce Code Analyzer
+        run: |
+          #Installing Salesforce Code Analyzer plugin for static code analysis
+          sf plugins install @salesforce/sfdx-scanner
+          #verifying Salesforce Code Analyzer plugin version
+          sf plugins 
+
       - name : Decrypting the JWT encrypted key for Authentication
         run: |
           #Decrypting the JWT encrypted key using OpenSSL
@@ -48,8 +55,8 @@ jobs:
         run: |
           #Validating the Salesforce organization by displaying the authenticated user
           sf project deploy start --target-org ${{vars.SF_ALIAS}} --source-dir force-app --dry-run --wait 10
-      - name: Deploying to Salesforce organization
-        run: |
-          #Deploying to Salesforce organization
-          sf project deploy start --target-org ${{vars.SF_ALIAS}} --source-dir force-app --ignore-conflicts --wait 10
+     # - name: Deploying to Salesforce organization
+      #  run: |
+       #   #Deploying to Salesforce organization
+        #  sf project deploy start --target-org ${{vars.SF_ALIAS}} --source-dir force-app --ignore-conflicts --wait 10
          
