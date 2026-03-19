@@ -43,16 +43,14 @@ jobs:
           sf plugins 
       - name: Running static code analysis using Salesforce Code Analyzer
         run: |
-          #Creating a directory to store the static code analysis reports
+          #Creating a directory to store the static code analysis reports.
           mkdir -p scanned-reports
           #Running static code analysis on the force-app directory and generating a report
           sf scanner run --target "force-app" --format "html" --outfile "scanned-reports/code-analysis-report.html" --engine "eslint-lwc, retire-js, pmd, cpd" --category "Best Practices, Code Styles, Design, Performance, Security" 
 
-      - name : Decrypting the JWT encrypted key for Authentication
+      - name : Decrypting the JWT encrypted key for Authentication.
         run: |
           #Decrypting the JWT encrypted key using OpenSSL
-          echo ${{secrets.ENCRYPTION_KEY}} 
-          echo ${{secrets.ENCRYPTION_IV}}
           openssl enc -aes-256-cbc -d -in ${{secrets.JWT_ENCRYPTION_KEY_FILE}} -out ${{secrets.JWT_KEY_FILE}} -K ${{secrets.ENCRYPTION_KEY}} -iv ${{secrets.ENCRYPTION_IV}} -base64
       - name: Authenticating to Salesforce using JWT.
         run:
