@@ -44,8 +44,10 @@ jobs:
           sf plugins 
       - name: Running static code analysis using Salesforce Code Analyzer
         run: |
+          #Creating a directory to store the static code analysis reports
+          mkdir -p scanned-reports
           #Running static code analysis on the force-app directory and generating a report
-          sf scanner scan --target "force-app" --format "html" --outfile "scanned-reports/code-analysis-report.html" --engine "eslint-lwc, retire-js, pmd, cpd" --category "Best Practices, Code Styles, Design, Performance, Security" 
+          sf scanner run --target "force-app" --format "html" --outfile "scanned-reports/code-analysis-report.html" --engine "eslint-lwc, retire-js, pmd, cpd" --category "Best Practices, Code Styles, Design, Performance, Security" 
 
       - name : Decrypting the JWT encrypted key for Authentication
         run: |
