@@ -48,6 +48,12 @@ jobs:
           #Running static code analysis on the force-app directory and generating a report
           sf scanner run --target "force-app" --format "html" --outfile "scanned-reports/code-analysis-report.html" --engine "eslint-lwc, retire-js, pmd, cpd" --category "Best Practices, Code Styles, Design, Performance, Security" 
 
+      - name: Uploading the static code analysis report as an artifact.  
+        uses: actions/upload-artifact@v7.0.0  
+        with:
+          name: code-analysis-report
+          path: scanned-reports/code-analysis-report.html
+
       - name : Decrypting the JWT encrypted key for Authentication.
         run: |
           #Decrypting the JWT encrypted key using OpenSSL
