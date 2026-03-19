@@ -54,6 +54,11 @@ jobs:
         with:
           name: code-analysis-report
           path: scanned-reports/code-analysis-report.html
+      
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v6
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name : Decrypting the JWT encrypted key for Authentication.
         run: |
