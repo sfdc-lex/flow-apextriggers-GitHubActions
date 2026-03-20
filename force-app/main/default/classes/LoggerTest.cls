@@ -86,4 +86,5 @@ public with sharing class LoggerTest {
         System.assertEquals('Test Parent', log.ParentName__c);
         String dmo = HousingData.jsonString;
     }
+
 }
