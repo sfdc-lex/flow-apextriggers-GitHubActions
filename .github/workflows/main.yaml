@@ -25,7 +25,7 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🏗️ Building the application...."
+      - run: echo "🏗️ Building the application....."
       - name: Checkout
         uses: actions/checkout@v6.0.2
         with:
@@ -72,6 +72,7 @@ jobs:
           mkdir -p localTestsReport
           sf apex run test --test-level RunLocalTests --code-coverage --detailed-coverage --output-dir ./localTestsReport/ --result-format human --wait 10 --synchronous --target-org ${{vars.SF_ALIAS}}
           #sf apex run test --test-level RunLocalTests --code-coverage --detailed-coverage --output-dir ./localTestsReport/ --result-format human --wait 10 --synchronous
+
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v5
         with:
