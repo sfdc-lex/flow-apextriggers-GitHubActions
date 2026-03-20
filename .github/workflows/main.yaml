@@ -80,8 +80,8 @@ jobs:
         run: |
           #Validating the Salesforce organization by displaying the authenticated user
           sf project deploy start --target-org ${{vars.SF_ALIAS}} --source-dir force-app --dry-run --wait 10
-      #- name: Deploying to Salesforce organization
-       # run: |
-         # #Deploying to Salesforce organization
-        #  sf project deploy start --target-org ${{vars.SF_ALIAS}} --source-dir force-app --ignore-conflicts --wait 10
+      - name: Deploying to Salesforce organization
+        run: |
+          #Deploying to Salesforce organization
+          sf project deploy start --target-org ${{vars.SF_ALIAS}} --source-dir force-app --ignore-conflicts --wait 10
          
