@@ -24,7 +24,7 @@ on:
 jobs:
   Build:
     runs-on: ubuntu-latest
-    environment: prod
+    environment: dev
     steps:
       - run: echo "🏗️ Building the application....."
       - name: Checkout
@@ -68,10 +68,10 @@ jobs:
           #Authenticating to Salesforce using the decrypted JWT key.
           sf org login jwt --client-id ${{secrets.SF_CLIENT_ID}} --jwt-key-file ${{secrets.JWT_KEY_FILE}} --username ${{secrets.SF_USERNAME}} --instance-url ${{vars.SF_INSTANCE_URL}} --alias ${{vars.SF_ALIAS}} --set-default
 
-     # - name: Run Apex Local Test Cases..
-      #  run: |
-       #   mkdir -p localTestsReport
-        #  sf apex run test --test-level RunSpecifiedTests --tests InvoiceControllerTest --code-coverage --detailed-coverage --output-dir ./localTestsReport/ --result-format human --wait 10 --synchronous --target-org ${{vars.SF_ALIAS}}
+      - name: Run Apex Local Test Cases..
+        run: |
+          mkdir -p localTestsReport
+          sf apex run test --test-level RunSpecifiedTests --tests InvoiceControllerTest --code-coverage --detailed-coverage --output-dir ./localTestsReport/ --result-format human --wait 10 --synchronous --target-org ${{vars.SF_ALIAS}}
           #sf apex run test --test-level RunLocalTests --code-coverage --detailed-coverage --output-dir ./localTestsReport/ --result-format human --wait 10 --synchronous
 
       - name: Upload coverage reports to Codecov
