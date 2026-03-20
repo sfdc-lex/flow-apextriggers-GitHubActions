@@ -8,11 +8,7 @@ on:
      # - 'force-app/**'
   pull_request:
     branches:
-      - main
-      - master 
-      - uat
-      - sit
-      - development
+      - dev
     paths:
     - 'force-app/**'
     types:
