@@ -8,7 +8,11 @@ on:
      # - 'force-app/**'
   pull_request:
     branches:
-      - development 
+      - main 
+      - master
+      - sit
+      - uat
+      - development
     paths:
     - 'force-app/**'
     types:
@@ -20,7 +24,7 @@ on:
 jobs:
   Build:
     runs-on: ubuntu-latest
-    environment: prod
+    #environment: prod
     steps:
       - run: echo "🏗️ Building the application....."
       - name: Checkout
