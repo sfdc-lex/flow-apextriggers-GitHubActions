@@ -62,7 +62,7 @@ jobs:
         run: |
           #Decrypting the JWT encrypted key using OpenSSL
           openssl enc -aes-256-cbc -d -in ${{secrets.JWT_ENCRYPTION_KEY_FILE}} -out ${{secrets.JWT_KEY_FILE}} -K ${{secrets.ENCRYPTION_KEY}} -iv ${{secrets.ENCRYPTION_IV}} -base64
-      - name: Authenticating to Salesforce using JWT.
+      - name: Authenticating to Salesforce using JWT..
         run:
           #Authenticating to Salesforce using the decrypted JWT key.
           sf org login jwt --client-id ${{secrets.SF_CLIENT_ID}} --jwt-key-file ${{secrets.JWT_KEY_FILE}} --username ${{secrets.SF_USERNAME}} --instance-url ${{vars.SF_INSTANCE_URL}} --alias ${{vars.SF_ALIAS}} --set-default
