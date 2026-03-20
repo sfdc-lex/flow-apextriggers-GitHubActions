@@ -46,7 +46,7 @@ jobs:
       - name: Install sfdx-git-delta.
         run: |
           #Install sfdx-git-delta
-          sf plugins install sfdx-git-delta -y
+          echo 'y' | sf plugins install sfdx-git-delta
       - name: Running static code analysis using Salesforce Code Analyzer
         run: |
           #Creating a directory to store the static code analysis reports.
