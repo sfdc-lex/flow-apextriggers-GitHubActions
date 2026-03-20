@@ -75,7 +75,7 @@ jobs:
       - name: Run Apex Local Test Cases.
         run: |
           mkdir -p localTestsReport
-          sf apex run test --test-level RunLocalTests --code-coverage --detailed-coverage --output-dir ./localTestsReport/ --result-format junit --wait 10
+          sf apex run test --test-level RunLocalTests --code-coverage --detailed-coverage --output-dir ./localTestsReport/ --result-format human --wait 10
 
       - name: Validating to Salesforce organization
         run: |
