@@ -46,6 +46,7 @@ jobs:
 
       - name: Generate Delta for deployment
         run: |
+         mkdir -p delta
             #Generate delta for deployment
             sf sgd source delta --to "HEAD" --from "HEAD~1" --output-dir ./delta/ --generate-delta --ignore-whitespace --ignore-file .sgdignore
             ls -l ./delta

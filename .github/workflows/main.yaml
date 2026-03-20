@@ -37,12 +37,14 @@ jobs:
           npm install @salesforce/cli --global
           #Verifying Salesforce CLI version
           sf --version
+
       - name: Insatll Salesforce Code Analyzer
         run: |
           #Installing Salesforce Code Analyzer plugin for static code analysis
           sf plugins install code-analyzer
           #verifying Salesforce Code Analyzer plugin version
           sf plugins --core
+
       - name: Install sfdx-git-delta.
         run: |
           #Install sfdx-git-delta
@@ -50,12 +52,13 @@ jobs:
 
       - name: Generate Delta for deployment
         run: |
+            mkdir -p delta
             #Generate delta for deployment
             sf sgd source delta --to "HEAD" --from "HEAD~1" --output-dir ./delta/ --generate-delta --ignore-whitespace --ignore-file .sgdignore
             ls -l ./delta
             cat ./delta/package/package.xml
             cat ./delta/destructiveChanges/destructiveChanges.xml
-            
+
       - name: Running static code analysis using Salesforce Code Analyzer
         run: |
           #Creating a directory to store the static code analysis reports.
