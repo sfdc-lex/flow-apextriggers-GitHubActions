@@ -76,13 +76,17 @@ jobs:
         run: |
           mkdir -p localTestsReport
           sf apex run test --test-level RunAllTestsInOrg --code-coverage --detailed-coverage --output-dir ./localTestsReport/ --result-format human --wait 10
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v6
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name: Validating to Salesforce organization
         run: |
           #Validating the Salesforce organization by displaying the authenticated user
           sf project deploy start --target-org ${{vars.SF_ALIAS}} --source-dir force-app --dry-run --wait 10
-      - name: Deploying to Salesforce organization
-        run: |
-          #Deploying to Salesforce organization
-          sf project deploy start --target-org ${{vars.SF_ALIAS}} --source-dir force-app --ignore-conflicts --wait 10
+      #- name: Deploying to Salesforce organization
+       # run: |
+         # #Deploying to Salesforce organization
+        #  sf project deploy start --target-org ${{vars.SF_ALIAS}} --source-dir force-app --ignore-conflicts --wait 10
          

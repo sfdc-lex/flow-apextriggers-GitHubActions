@@ -39,15 +39,15 @@ public class InvoicePDFControllerTest {
         insert testEvent;
 
         // Create test data for Account and Contact
-        Account account = new Account(
+         Account account = new Account(
             Name = 'Test Account',
             BillingStreet = '456 Test Ave',
             BillingCity = 'Test City',
-            BillingState = 'Test State',
+            BillingState = 'Karnataka',
             BillingPostalCode = '67890',
-            BillingCountry = 'Test Country'
+            BillingCountry = 'United States'
         );
-        insert account;
+        insert account; 
 
         Contact contact = new Contact(
             FirstName = 'Test',
