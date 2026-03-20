@@ -1,5 +1,5 @@
 @isTest
-public class AddAttendeeControllerTest {
+public class AddAttendeeController {
 
     @isTest
     static void testCreateAttendeeAndTicket() {
