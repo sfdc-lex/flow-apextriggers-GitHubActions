@@ -43,9 +43,9 @@ public class InvoicePDFControllerTest {
             Name = 'Test Account',
             BillingStreet = '456 Test Ave',
             BillingCity = 'Test City',
-            BillingState = 'Karnataka',
+            BillingState = 'KA',
             BillingPostalCode = '67890',
-            BillingCountry = 'United States'
+            BillingCountry = 'IN'
         );
         insert account; 
 
