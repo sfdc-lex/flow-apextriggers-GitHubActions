@@ -18,8 +18,8 @@ on:
     types:
       - opened
       - synchronize
-      - reopened
-      - closed
+      #- reopened
+      #- closed
 
 jobs:
   Build:
