@@ -20,9 +20,7 @@ on:
       - synchronize
       - reopened
       - closed
-env:
-  ENGINE: "eslint-lwc retire-js pmd cpd"
-  CATEGORY: "Best Practices|Code Styles|Design|Performance|Security"
+
 jobs:
   Build:
     runs-on: ubuntu-latest
@@ -41,15 +39,15 @@ jobs:
       - name: Insatll Salesforce Code Analyzer
         run: |
           #Installing Salesforce Code Analyzer plugin for static code analysis
-          sf plugins install @salesforce/sfdx-scanner
+          sf plugins install code-analyzer
           #verifying Salesforce Code Analyzer plugin version
-          sf plugins 
+          sf plugins --core
       - name: Running static code analysis using Salesforce Code Analyzer
         run: |
           #Creating a directory to store the static code analysis reports.
           mkdir -p scanned-reports
           #Running static code analysis on the force-app directory and generating a report
-          sf scanner run --target "force-app" --format html --outfile "scanned-reports/code-analysis-report.html" --engine ${{env.ENGINE}} --category=${{env.CATEGORY}} --severity-threshold 3
+          sf code -analyzer run --target "force-app" --output-file ./scanned-reports/results.html --rule-selector all  
 
 
       - name: Uploading the static code analysis report as an artifact.  
