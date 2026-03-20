@@ -21,8 +21,8 @@ on:
       - reopened
       - closed
 env:
-  ENGINE: "eslint-lwc, retire-js, pmd, cpd"
-  CATEGORY: "Best Practices, Code Styles, Design, Performance, Security"
+  ENGINE: "eslint-lwc retire-js pmd cpd"
+  CATEGORY: "Best Practices|Code Styles|Design|Performance|Security"
 jobs:
   Build:
     runs-on: ubuntu-latest
