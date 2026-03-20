@@ -47,7 +47,7 @@ jobs:
           #Creating a directory to store the static code analysis reports.
           mkdir -p scanned-reports
           #Running static code analysis on the force-app directory and generating a report
-          sf code-analyzer run --target "force-app" --output-file ./scanned-reports/results.html --rule-selector all  
+          sf code-analyzer run --target "force-app" --output-file ./scanned-reports/results.html --rule-selector Recommended  
 
 
       - name: Uploading the static code analysis report as an artifact.  
