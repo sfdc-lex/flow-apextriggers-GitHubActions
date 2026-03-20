@@ -57,11 +57,6 @@ jobs:
           name: code-analysis-report
           path: scanned-reports/results.html
           if-no-files-found: ignore
-      
-      - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@v6
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name : Decrypting the JWT encrypted key for Authentication..
         run: |
@@ -75,7 +70,7 @@ jobs:
       - name: Run Apex Local Test Cases.
         run: |
           mkdir -p localTestsReport
-          sf apex run test --test-level RunAllTestsInOrg --code-coverage --detailed-coverage --output-dir ./localTestsReport/ --result-format human --wait 10
+          sf apex run test --test-level RunAllTestsInOrg --code-coverage --detailed-coverage --output-dir ./localTestsReport/ --result-format human --wait 10 --synchronous
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v6
         env:
