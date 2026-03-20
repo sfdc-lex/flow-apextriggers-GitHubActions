@@ -21,10 +21,10 @@
                 <behavior>Edit</behavior>
                 <field>Email__c</field>
             </layoutItems>
-        <!--     <layoutItems>
+            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Country__c</field>
-            </layoutItems> -->
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>

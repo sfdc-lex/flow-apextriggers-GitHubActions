@@ -118,8 +118,8 @@
     </actionOverrides>
     <brand>
         <headerColor>#2E2E38</headerColor>
-       <!--  <logo>Panther_Schools_text2</logo>
-        <logoVersion>1</logoVersion> -->
+        <logo>Panther_Schools_text2</logo>
+        <logoVersion>1</logoVersion>
         <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
     </brand>
     <description>This application is used to manage the event and the invoicing for the same. The application provides the seamless integration with invoice and razorpay for accepting the payment.</description>
