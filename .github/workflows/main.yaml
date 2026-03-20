@@ -24,7 +24,6 @@ on:
 jobs:
   Build:
     runs-on: ubuntu-latest
-    environment: prod
     steps:
       - run: echo "🏗️ Building the application...."
       - name: Checkout
@@ -71,7 +70,8 @@ jobs:
       - name: Run Apex Local Test Cases.
         run: |
           mkdir -p localTestsReport
-          sf apex run test --test-level RunLocalTests --code-coverage --detailed-coverage --output-dir ./localTestsReport/ --result-format human --wait 10 --synchronous
+          sf apex run test --test-level RunLocalTests --code-coverage --detailed-coverage --output-dir ./localTestsReport/ --result-format human --wait 10 --synchronous --target-org devOrg
+          #sf apex run test --test-level RunLocalTests --code-coverage --detailed-coverage --output-dir ./localTestsReport/ --result-format human --wait 10 --synchronous
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v5
         with:
