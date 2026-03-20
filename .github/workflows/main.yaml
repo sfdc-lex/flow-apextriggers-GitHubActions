@@ -43,6 +43,10 @@ jobs:
           sf plugins install code-analyzer
           #verifying Salesforce Code Analyzer plugin version
           sf plugins --core
+      - name: Install sfdx-git-delta.
+        run: |
+          #Install sfdx-git-delta
+          sf plugins install sfdx-git-delta -y
       - name: Running static code analysis using Salesforce Code Analyzer
         run: |
           #Creating a directory to store the static code analysis reports.
