@@ -49,7 +49,7 @@ jobs:
           #Creating a directory to store the static code analysis reports.
           mkdir -p scanned-reports
           #Running static code analysis on the force-app directory and generating a report
-          sf scanner run --target "force-app" --format "html" --outfile "scanned-reports/code-analysis-report.html" --engine=${{env.ENGINE}} --category=${{env.CATEGORY}} --severity-threshold 3
+          sf scanner run --target "force-app" --format html --outfile "scanned-reports/code-analysis-report.html" --engine ${{env.ENGINE}} --category=${{env.CATEGORY}} --severity-threshold 3
 
 
       - name: Uploading the static code analysis report as an artifact.  
