@@ -2,6 +2,17 @@
 # If you are not using git, you can delete this file. For more information see: https://git-scm.com/docs/gitignore
 # For useful gitignore templates see: https://github.com/github/gitignore
 
+
+#delta folder
+delta/
+
+#localTestsReport
+localTestsReport/
+
+#scanned-reports directory to store the static code analysis reports
+scanned-reports/
+#Ignoring Keys
+keys/
 # Salesforce cache
 .sf/
 .sfdx/
@@ -13,7 +24,6 @@ deploy-options.json
 
 # LWC Jest coverage reports
 coverage/
-keys/
 delta/
 
 # Logs
